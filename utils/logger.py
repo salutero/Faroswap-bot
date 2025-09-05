@@ -14,7 +14,7 @@ except ImportError:
 
 # Rest of the code wrapped in appropriate checks
 if QT_AVAILABLE:
-    class LogSignals(QObject):
+    class LogSignals(QObject): 
         new_log = Signal(str, dict)
     
     class QTextEditHandler:
