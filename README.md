@@ -15,7 +15,7 @@
 
 # Installation+Run🕸
 ```shell
-git clone https://github.com/ox1nec/Faroswap-bot
+git clone https://github.com/salutero/Faroswap-bot
 cd Faroswap-bot
 run.bat
 ```
@@ -23,7 +23,7 @@ run.bat
 **OR**
 
 ```shell
-git clone https://github.com/ox1nec/Faroswap-bot
+git clone https://github.com/salutero/Faroswap-bot
 cd Faroswap-bot
 pip install -r requirements.txt
 python bot.py
